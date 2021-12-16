@@ -63,6 +63,14 @@ const StoreState = (props) => {
 
 	}
 
+	const createStore = async (form) => {
+
+		const res = await axiosClient.post("stores/create", form)
+
+		console.log(res)
+
+	}
+
 
 	// 4. RETORNO
 	return (
@@ -73,7 +81,8 @@ const StoreState = (props) => {
 				singleStore:globalState.singleStore,
 				changeText,
 				getStores,
-				getStore
+				getStore,
+				createStore
 			}}
 		>
 			{props.children}
